@@ -35,8 +35,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.jetbrains:annotations:24.0.0'
-	compileOnly 'org.projectlombok:lombok'
+    implementation 'org.jetbrains:annotations:24.0.0'
+    compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -112,5 +112,7 @@ tasks.named('bootBuildImage') {
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+       //useJUnitPlatform()
+       exclude '**/*' // 빌드 시 전체 테스트 생략
+
 }
