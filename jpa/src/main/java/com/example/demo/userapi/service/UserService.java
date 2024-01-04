@@ -412,7 +412,7 @@ public class UserService {
 
     public String emailAuthenticate(String email) {
         String authcode = String.valueOf(makeRandomNumber());
-        //mailService.sendEmail(email, "1nterface 회원가입 인증코드입니다.", authcode);
+        mailService.sendEmail(email, "1nterface 회원가입 인증코드입니다.", authcode);
 
         return tokenEmailCheckProvider.createToken(email, authcode, false);
     }
